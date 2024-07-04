@@ -1,15 +1,60 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int totalSum = 0;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        while (true) {
+            System.out.println("Please choose one of the options: ");
+            System.out.println("1) Create Account, 2) Deposit, 3) Withdraw, 4) Check Balance");
+
+            Scanner scanner = new Scanner(System.in);
+            int userInput = scanner.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    System.out.println("Please enter a bank account number: ");
+                    scanner = new Scanner(System.in);
+                    String bankAccountNumber = scanner.next();
+
+                    System.out.println("Please enter account holder name: ");
+                    scanner = new Scanner(System.in);
+                    String holderName = scanner.next();
+
+                    System.out.println("Please enter initial balance: ");
+                    scanner = new Scanner(System.in);
+                    String initialBalance = scanner.next();
+
+                    Bankproblem createNewAccount = new Bankproblem(bankAccountNumber, holderName, totalSum);
+                    System.out.println(bankAccountNumber + " " + holderName + " " + initialBalance);
+                    break;
+
+                case 2:
+                    System.out.println("how much do you want to deposit? -- ");
+                    scanner = new Scanner(System.in);
+                    int newDeposit = scanner.nextInt();
+                    totalSum += newDeposit;
+                    System.out.println("Your total balance is " + totalSum);
+                    break;
+
+                case 3:
+                    System.out.println("How much do you want to withdraw? -- ");
+                    scanner = new Scanner(System.in);
+                    int withdraw = scanner.nextInt();
+                    if (totalSum > withdraw) {
+                        totalSum -= withdraw;
+                        System.out.println("Your total balance is " + totalSum);
+                    } else {
+                        System.out.println("Your account does not have enough funds!");
+                        System.out.println("Please check your account and try again.");
+                    }
+                    break;
+
+                case 4:
+
+                    System.out.println("Your total balance is " + totalSum);
+                    break;
+            }
         }
     }
 }
