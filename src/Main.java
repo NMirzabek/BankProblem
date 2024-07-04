@@ -25,7 +25,6 @@ public class Main {
                     scanner = new Scanner(System.in);
                     String initialBalance = scanner.next();
 
-                    Bankproblem createNewAccount = new Bankproblem(bankAccountNumber, holderName, totalSum);
                     System.out.println(bankAccountNumber + " " + holderName + " " + initialBalance);
                     break;
 
@@ -51,9 +50,13 @@ public class Main {
                     break;
 
                 case 4:
-
                     System.out.println("Your total balance is " + totalSum);
                     break;
+
+                case 5:
+                    System.out.println("8600 3404 9701 2670");
+                    break;
+
             }
         }
     }

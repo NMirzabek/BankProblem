@@ -8,7 +8,7 @@ public class Bankproblem {
         this.account = account;
         this.deposit = deposit;
         this.withdraw = String.valueOf(withdraw);
-        this.balance = balance;
+//        this.balance = balance;
     }
 
     public String getAccount() {
