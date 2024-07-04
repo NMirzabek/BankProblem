@@ -6,7 +6,7 @@ public class Main {
 
         while (true) {
             System.out.println("Please choose one of the options: ");
-            System.out.println("1) Create Account, 2) Deposit, 3) Withdraw, 4) Check Balance");
+            System.out.println("1) Create Account, 2) Deposit, 3) Withdraw, 4) Check Balance, 5) Card Number, 6) Card Color");
 
             Scanner scanner = new Scanner(System.in);
             int userInput = scanner.nextInt();
@@ -25,7 +25,6 @@ public class Main {
                     scanner = new Scanner(System.in);
                     String initialBalance = scanner.next();
 
-                    Bankproblem createNewAccount = new Bankproblem(bankAccountNumber, holderName, totalSum);
                     System.out.println(bankAccountNumber + " " + holderName + " " + initialBalance);
                     break;
 
@@ -51,9 +50,17 @@ public class Main {
                     break;
 
                 case 4:
-
                     System.out.println("Your total balance is " + totalSum);
                     break;
+
+                case 5:
+                    System.out.println("8600 3404 9701 2670");
+                    break;
+
+                case 6:
+                    System.out.println("Black");
+                    break;
+
             }
         }
     }
